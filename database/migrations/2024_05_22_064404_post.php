@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('desc');
             $table->unsignedBigInteger('user_id');
             $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
