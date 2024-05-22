@@ -9,5 +9,9 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/posts', [PostController::class, 'posts']);
+    Route::get('/view/{id}', [PostController::class, 'view']);
+    Route::post('/create', [PostController::class, 'create']);
+    Route::put('/edit/{id}', [PostController::class, 'edit']);
+    Route::delete('/delete/{id}', [PostController::class, 'delete']);
 });
 
